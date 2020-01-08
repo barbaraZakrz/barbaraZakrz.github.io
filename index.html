@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.nav-link').click(function () {
+                var thisPage = $(this);
+                $('#content').fadeOut(200, function () {
+                    $('#content').load(thisPage.attr('href'), function () {
+                        $('#content').fadeIn(200);
+                    });
+                });
+                $('li.active').removeClass('active');
+                $(this).closest('li').addClass('active');
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="rys.html">Rys historyczny</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="wzorzec.html">Wzorzec FCI</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="galeria.html">Galeria</a>
+        </li>
+    </ul>
+
+</nav>
+
+<div class="row">
+    <div class="col-md-12 dark-text text-center" id="content">
+        <p> <a href="#">Posokowce bawarskie</a> to psy średniej wielkości, harmonijnie zbudowane, raczej lekkie, dobrze umięśnione, o pięknym umaszczeniu.</p>
+        <p>Są to psy myśliwskie, <strong>tropowce,</strong> używane do poszukiwania postrzałków zwierzyny grubej.</p>
+        <p>Przywiązane do właściciela, <em> okazują rezerwę wobec obcych</em>.</p>
+        <p>Mają żywe usposobienie i duży temperament, co powoduje konieczność dobrego prowadzenia i utrzymania w karności. </p>
+        <center><img src="images/zd7.jpg" alt="posokowiec 6"/></center>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+    </div>
+</footer>
+</body>
+</html>
